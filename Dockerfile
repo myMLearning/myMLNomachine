@@ -13,6 +13,8 @@ RUN curl -fSL "http://download.nomachine.com/download/${NOMACHINE_BUILD}/Linux/$
     && sed -i "s|#EnableClipboard both|EnableClipboard both |g" /usr/NX/etc/server.cfg
 
 ADD nxserver.sh /
-RUN chmod +x /nxserver.sh
+ADD activateconda.sh /
+RUN chmod +x /nxserver.sh && \
+    chmod +x /activateconda.sh
 
 ENTRYPOINT ["/nxserver.sh"]
