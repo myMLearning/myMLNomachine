@@ -17,4 +17,4 @@ ADD activateconda.sh /
 RUN chmod +x /nxserver.sh && \
     chmod +x /activateconda.sh
 
-ENTRYPOINT ["/nxserver.sh"]
+ENTRYPOINT ["/entrypoint.sh /nxserver.sh"]
