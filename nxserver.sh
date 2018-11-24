@@ -19,9 +19,8 @@ chown -R $USER:$USER /home/$USER
 
 #su $USER
 #eval $(ssh-agent -s)
-su $USER
-ssh-add /home/$USER/.ssh/jiri_kulik
+su -c "ssh-add /home/$USER/.ssh/jiri_kulik" $USER
 
-su root
+#su root
 /etc/NX/nxserver --startup
 tail -f /usr/NX/var/log/nxserver.log
