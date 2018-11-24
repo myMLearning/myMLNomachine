@@ -18,8 +18,10 @@ chmod 600 /home/$USER/.ssh/jiri_kulik.pub
 chown -R $USER:$USER /home/$USER
 
 #su $USER
-eval $(ssh-agent -s)
+#eval $(ssh-agent -s)
+su $USER
 ssh-add /home/$USER/.ssh/jiri_kulik
 
+su root
 /etc/NX/nxserver --startup
 tail -f /usr/NX/var/log/nxserver.log
