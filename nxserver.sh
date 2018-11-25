@@ -24,9 +24,10 @@ chmod 600 /home/$USER/.ssh/jiri_kulik.pub
 #Change owner of the user's home folder for the user
 chown -R $USER:$USER /home/$USER
 
+#ssh-add /home/$USER/.ssh/jiri_kulik needs to be entered manually in shell
 #su $USER
 #eval $(ssh-agent -s)
-su -c "eval $(ssh-agent -s) ssh-add /home/$USER/.ssh/jiri_kulik" $USER
+#su -c "eval $(ssh-agent -s) ssh-add /home/$USER/.ssh/jiri_kulik" $USER
 #su -c "ssh-add /home/$USER/.ssh/jiri_kulik" $USER
 
 #su root
